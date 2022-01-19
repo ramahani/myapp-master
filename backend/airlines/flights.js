@@ -3,24 +3,27 @@ const Schema= mongoose.Schema;
 
 const FlightSchema = new Schema (
     {
-       Flight_Number :{type : Number , Required : true},
-       From:{ type: String, required: true },
-       To:{ type: String, required: true },
-       Departure_Time : {type : String , required : true},
-       Arrival_Time : {type:String , required:true},
-       Flight_Date:{ type: String, required: true },
-       Cabin:{ type: String, required: true },
-       Price:{type: Number, requried: true},
-       Firstclassseats:{type: Number, required: true},
-       Businessclassseats:{type: Number, required: true},
-       Economyclassseats:{type: Number, required: true},
-       Seats_Available:{ type: [String], required: true },
-       Duration:{type:String, required:true},
-       Departure_Terminal:{type:String, required:true},
-       Arrival_Terminal:{type:String, required:true}
+       Flight_Number :{type : String , Required : false},
+       From:{ type: String, required: false },
+       To:{ type: String, required: false },
+       Departure_Time : {type : String , required : false},
+       Arrival_Time : {type:String , required:false},
+       Flight_Date:{ type: String, required: false },
+       Seats: {type: String, required: false},
+       Departure_Date:{ type: String, required: false },
+       Arrival_Date:{ type: String, required: false },
+       Cabin:{ type: String, required: false },
+       Price:{type: String, requried: false},
+       Firstclassseats:{type: String, required: false},
+       Businessclassseats:{type: String, required: false},
+       Economyclassseats:{type: String, required: false},
+       Seats_Available:{ type: [String], required: false },
+       Duration:{type:String, required:false},
+       Departure_Terminal:{type:String, required:false},
+       Arrival_Terminal:{type:String, required:false}
     }, 
     {timestamps: true,}
 );
 
-const Flights= mongoose.model('FLight', FlightSchema);
+const Flights= mongoose.model('Flight', FlightSchema);
 module.exports = Flights;
